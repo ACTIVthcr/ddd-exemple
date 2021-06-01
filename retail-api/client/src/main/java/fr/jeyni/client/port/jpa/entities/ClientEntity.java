@@ -5,15 +5,17 @@ import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Builder
 @AllArgsConstructor
-@Table(name = "client")
+@NoArgsConstructor
+@Table(name = "CLIENT")
 public class ClientEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Getter
-	private final Long id;
+	private Long id;
 }
