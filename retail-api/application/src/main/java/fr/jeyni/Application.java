@@ -14,9 +14,6 @@ public class Application extends SpringBootServletInitializer {
 
 	@SuppressWarnings("squid:S4823")
 	public static void main(final String[] args) {
-		for (String arg : args) {
-			System.out.println(arg);
-		}
 		SpringApplication.run(Application.class, args);
 	}
 

@@ -22,11 +22,17 @@
 				<maven.compiler.target>${java.version}</maven.compiler.target>
 				<maven.compiler.source>${java.version}</maven.compiler.source>
 				<!-- spring version -->
-				<spring.version>2.4.5</spring.version>
+				<spring.version>2.5.0</spring.version>
+				<junit.version>5.7.2</junit.version>
 		</properties>
 
 		<dependencyManagement>
 				<dependencies>
+						<dependency>
+								<groupId>org.springframework.boot</groupId>
+								<artifactId>spring-boot-starter</artifactId>
+								<version>${spring.version}</version>
+						</dependency>
 						<dependency>
 								<groupId>org.springframework.boot</groupId>
 								<artifactId>spring-boot-starter-web</artifactId>
@@ -94,6 +100,38 @@
 								<version>4.0.1</version>
 								<scope>provided</scope>
 						</dependency>
+						<!-- JUNIT -->
+						<dependency>
+								<groupId>org.junit.jupiter</groupId>
+								<artifactId>junit-jupiter</artifactId>
+								<version>${junit.version}</version>
+								<scope>test</scope>
+						</dependency>
+						<dependency>
+								<groupId>org.junit.jupiter</groupId>
+								<artifactId>junit-jupiter-api</artifactId>
+								<version>${junit.version}</version>
+								<scope>test</scope>
+						</dependency>
+						<!-- junit for intelliJ -->
+						<dependency>
+								<groupId>org.junit.platform</groupId>
+								<artifactId>junit-platform-launcher</artifactId>
+								<version>1.7.2</version>
+								<scope>test</scope>
+						</dependency>
+						<dependency>
+								<groupId>org.junit.jupiter</groupId>
+								<artifactId>junit-jupiter-engine</artifactId>
+								<version>${junit.version}</version>
+								<scope>test</scope>
+						</dependency>
+						<dependency>
+								<groupId>org.assertj</groupId>
+								<artifactId>assertj-core</artifactId>
+								<version>3.19.0</version>
+								<scope>test</scope>
+						</dependency>
 				</dependencies>
 		</dependencyManagement>
 
@@ -109,6 +147,11 @@
 										<groupId>org.springframework.boot</groupId>
 										<artifactId>spring-boot-maven-plugin</artifactId>
 										<version>${spring.version}</version>
+								</plugin>
+								<plugin>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-surefire-plugin</artifactId>
+										<version>3.0.0-M5</version>
 								</plugin>
 						</plugins>
 				</pluginManagement>
