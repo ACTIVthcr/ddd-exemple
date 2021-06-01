@@ -13,6 +13,7 @@ public class RegistrationEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Getter
+	@Column(name = "REG_ID")
 	private Long id;
 	@Getter
 	@Setter

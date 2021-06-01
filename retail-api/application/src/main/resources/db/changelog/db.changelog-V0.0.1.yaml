@@ -8,7 +8,7 @@ databaseChangeLog:
             tableName: REGISTRATION
             columns:
               - column:
-                  name: id
+                  name: REG_ID
                   type: BIGINT
                   constraints:
                     primary: true
@@ -25,3 +25,9 @@ databaseChangeLog:
               - column:
                   name: PHONE_NUMBER
                   type: VARCHAR(20)
+        - addAutoIncrement:
+            tableName: REGISTRATION
+            columnDataType: BIGINT
+            columnName: REG_ID
+            defaultOnNull: false
+            generationType: ALWAYS
