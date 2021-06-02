@@ -11,9 +11,9 @@ public class RegistrationEntityMapper {
 	private RegistrationEntityMapper() {
 	}
 
-	public static RegistrationEntity domainToEntity(Registration registrationEntity) {
-		return new RegistrationEntity(registrationEntity.email(), registrationEntity.firstName(),
-				registrationEntity.name(), registrationEntity.phoneNumber());
+	public static RegistrationEntity domainToEntity(Registration registration, String password) {
+		return new RegistrationEntity(registration.email(), registration.firstName(), registration.name(),
+				registration.phoneNumber(), password);
 	}
 
 	public static Registration entityToDomain(RegistrationEntity registrationEntity) {

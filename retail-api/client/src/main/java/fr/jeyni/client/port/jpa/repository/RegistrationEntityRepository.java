@@ -6,4 +6,5 @@ import fr.jeyni.client.port.jpa.entities.RegistrationEntity;
 
 public interface RegistrationEntityRepository extends JpaRepository<RegistrationEntity, Long> {
 
+	RegistrationEntity findByEmail(String email);
 }

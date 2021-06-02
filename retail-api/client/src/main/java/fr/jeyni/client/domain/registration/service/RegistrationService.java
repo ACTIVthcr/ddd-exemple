@@ -3,7 +3,9 @@ package fr.jeyni.client.domain.registration.service;
 import fr.jeyni.client.domain.id.RegistrationId;
 import fr.jeyni.client.domain.registration.Registration;
 
-public interface RegistrationStore {
+public interface RegistrationService {
 
-	Registration get(RegistrationId regId);
+	void authenticate(String mail, String password);
+
+	RegistrationId register(Registration registration, String password);
 }

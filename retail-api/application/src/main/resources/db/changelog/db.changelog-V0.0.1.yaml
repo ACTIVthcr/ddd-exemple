@@ -16,12 +16,23 @@ databaseChangeLog:
               - column:
                   name: EMAIL
                   type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PASSWORD
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
               - column:
                   name: FIRST_NAME
                   type: VARCHAR(100)
+                  constraints:
+                    nullable: false
               - column:
                   name: NAME
                   type: VARCHAR(100)
+                  constraints:
+                    nullable: false
               - column:
                   name: PHONE_NUMBER
                   type: VARCHAR(20)

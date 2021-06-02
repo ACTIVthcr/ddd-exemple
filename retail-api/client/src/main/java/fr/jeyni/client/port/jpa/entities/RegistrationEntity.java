@@ -27,12 +27,16 @@ public class RegistrationEntity {
 	@Getter
 	@Setter
 	private String phoneNumber;
+	@Getter
+	@Setter
+	private String password;
 
 	@Builder
-	public RegistrationEntity(String email, String firstName, String name, String phoneNumber) {
+	public RegistrationEntity(String email, String firstName, String name, String phoneNumber, String password) {
 		this.email = email;
 		this.firstName = firstName;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
+		this.password = password;
 	}
 }
