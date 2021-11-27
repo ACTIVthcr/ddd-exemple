@@ -18,7 +18,7 @@
 				<!-- Encodage -->
 				<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 				<!-- java version -->
-				<java.version>16</java.version>
+				<java.version>17</java.version>
 				<maven.compiler.target>${java.version}</maven.compiler.target>
 				<maven.compiler.source>${java.version}</maven.compiler.source>
 				<!-- spring version -->
@@ -180,5 +180,4 @@
 						</plugins>
 				</pluginManagement>
 		</build>
-
 </project>
