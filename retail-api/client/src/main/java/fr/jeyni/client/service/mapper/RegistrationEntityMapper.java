@@ -8,7 +8,8 @@ import fr.jeyni.client.port.jpa.entities.RegistrationEntity;
 
 public class RegistrationEntityMapper {
 
-	private RegistrationEntityMapper() {
+	private RegistrationEntityMapper() throws IllegalAccessException {
+		throw new IllegalAccessException("Utility class");
 	}
 
 	public static RegistrationEntity domainToEntity(Registration registration, String password) {

@@ -1,10 +1,9 @@
 package fr.jeyni.client.domain.registration;
 
-public class Address {
+public record Address(String number, String road, String city, Integer zipCode, String country, boolean current) {
 
-	private String number;
-	private String road;
-	private String city;
-	private Integer zipCode;
-	private String country;
+	public static Address hydrate(String number, String road, String city, Integer zipCode, String country,
+			boolean current) {
+		return new Address(number, road, city, zipCode, country, current);
+	}
 }

@@ -3,7 +3,6 @@ package fr.jeyni.client.api;
 import java.util.Collections;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +18,13 @@ import fr.jeyni.client.application.RegisterClient;
 @RequestMapping("/register")
 public class RegistrationController {
 
-	@Autowired
 	private RegisterClient registerClient;
-	@Autowired
 	private LogInClient logInClient;
+
+	public RegistrationController(RegisterClient registerClient, LogInClient logInClient) {
+		this.logInClient = logInClient;
+		this.registerClient = registerClient;
+	}
 
 	@PostMapping("/auth")
 	public void logInClient(@RequestBody LogInForm logInForm) {
