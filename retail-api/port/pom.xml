@@ -10,15 +10,13 @@
 				<version>0.0.1-SNAPSHOT</version>
 		</parent>
 
-		<artifactId>application</artifactId>
+		<artifactId>port</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<packaging>war</packaging>
-		<name>demo-ddd</name>
-		<description>demo ddd pour klee contrib</description>
+
 		<dependencies>
 				<dependency>
 						<groupId>fr.kleecontrib</groupId>
-						<artifactId>port</artifactId>
+						<artifactId>usecase</artifactId>
 						<version>0.0.1-SNAPSHOT</version>
 				</dependency>
 				<dependency>
@@ -27,37 +25,21 @@
 						<version>0.0.1-SNAPSHOT</version>
 				</dependency>
 				<dependency>
-						<groupId>fr.kleecontrib</groupId>
-						<artifactId>usecase</artifactId>
-						<version>0.0.1-SNAPSHOT</version>
-				</dependency>
-				<dependency>
 						<groupId>org.springframework.boot</groupId>
-						<artifactId>spring-boot-starter-tomcat</artifactId>
+						<artifactId>spring-boot-starter</artifactId>
 				</dependency>
 				<dependency>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-starter-web</artifactId>
 				</dependency>
-				<dependency>
-						<groupId>javax.servlet</groupId>
-						<artifactId>javax.servlet-api</artifactId>
-						<scope>provided</scope>
-				</dependency>
-				<!-- LIQUIBASE -->
+				<!-- DATABASE -->
 				<dependency>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-starter-data-jdbc</artifactId>
 				</dependency>
 				<dependency>
-						<groupId>org.liquibase</groupId>
-						<artifactId>liquibase-core</artifactId>
-				</dependency>
-				<!-- DRIVER POSTGRES -->
-				<dependency>
-						<groupId>org.postgresql</groupId>
-						<artifactId>postgresql</artifactId>
-						<scope>runtime</scope>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-data-jpa</artifactId>
 				</dependency>
 				<!-- HIBERNATE -->
 				<dependency>
@@ -68,10 +50,69 @@
 						<groupId>org.hibernate</groupId>
 						<artifactId>hibernate-entitymanager</artifactId>
 				</dependency>
+				<!-- LIQUIBASE -->
+				<dependency>
+						<groupId>org.liquibase</groupId>
+						<artifactId>liquibase-core</artifactId>
+				</dependency>
+				<dependency>
+						<groupId>org.postgresql</groupId>
+						<artifactId>postgresql</artifactId>
+						<scope>runtime</scope>
+				</dependency>
+				<!-- MAIL -->
+				<dependency>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-freemarker</artifactId>
+				</dependency>
+				<dependency>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-mail</artifactId>
+				</dependency>
 				<!-- SECURITY -->
 				<dependency>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-starter-security</artifactId>
+				</dependency>
+				<dependency>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-devtools</artifactId>
+						<scope>runtime</scope>
+						<optional>true</optional>
+				</dependency>
+				<!-- TOMCAT -->
+				<dependency>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-tomcat</artifactId>
+						<scope>provided</scope>
+				</dependency>
+				<dependency>
+						<groupId>javax.servlet</groupId>
+						<artifactId>javax.servlet-api</artifactId>
+						<scope>provided</scope>
+				</dependency>
+				<dependency>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok</artifactId>
+						<optional>true</optional>
+						<scope>provided</scope>
+				</dependency>
+				<!-- TEST -->
+				<dependency>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-test</artifactId>
+						<scope>test</scope>
+				</dependency>
+				<!-- JUNIT -->
+				<dependency>
+						<groupId>org.junit.jupiter</groupId>
+						<artifactId>junit-jupiter</artifactId>
+						<scope>test</scope>
+				</dependency>
+				<dependency>
+						<groupId>org.junit.jupiter</groupId>
+						<artifactId>junit-jupiter-api</artifactId>
+						<scope>test</scope>
 				</dependency>
 				<!-- junit for intelliJ -->
 				<dependency>
@@ -90,46 +131,5 @@
 						<scope>test</scope>
 				</dependency>
 		</dependencies>
-		<build>
-				<plugins>
-						<plugin>
-								<groupId>org.apache.maven.plugins</groupId>
-								<artifactId>maven-war-plugin</artifactId>
-						</plugin>
-						<plugin>
-								<groupId>org.springframework.boot</groupId>
-								<artifactId>spring-boot-maven-plugin</artifactId>
-								<configuration>
-										<addResources>true</addResources>
-								</configuration>
-						</plugin>
-						<plugin>
-								<groupId>org.apache.maven.plugins</groupId>
-								<artifactId>maven-compiler-plugin</artifactId>
-								<version>3.8.1</version>
-								<configuration>
-										<release>${java.version}</release>
-										<forceJavacCompilerUse>true</forceJavacCompilerUse>
-										<source>17</source>
-										<target>17</target>
-								</configuration>
-						</plugin>
-						<plugin>
-								<groupId>org.apache.maven.plugins</groupId>
-								<artifactId>maven-dependency-plugin</artifactId>
-								<executions>
-										<execution>
-												<goals>
-														<goal>sources</goal>
-														<goal>resolve</goal>
-												</goals>
-												<configuration>
-														<classifier>javadoc</classifier>
-												</configuration>
-										</execution>
-								</executions>
-						</plugin>
-				</plugins>
-				<finalName>${artifactId}</finalName>
-		</build>
+
 </project>
