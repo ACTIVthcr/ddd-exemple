@@ -1,4 +1,4 @@
-package fr.kleecontrib.application;
+package fr.kleecontrib;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

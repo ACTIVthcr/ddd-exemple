@@ -2,7 +2,7 @@ package fr.kleecontrib.port.service;
 
 import java.util.Optional;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import fr.kleecontrib.domain.id.RegistrationId;
 import fr.kleecontrib.domain.registration.Registration;
@@ -11,7 +11,7 @@ import fr.kleecontrib.port.jpa.repository.RegistrationEntityRepository;
 import fr.kleecontrib.port.service.mapper.RegistrationEntityMapper;
 import lombok.RequiredArgsConstructor;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class RegistrationStoreImpl implements RegistrationStore {
 

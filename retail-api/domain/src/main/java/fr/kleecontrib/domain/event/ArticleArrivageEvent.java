@@ -22,7 +22,7 @@ public class ArticleArrivageEvent implements ArticleEvent {
 		return dateArrivage;
 	}
 
-	public ArticleId getId() {
+	public ArticleId id() {
 		return id;
 	}
 

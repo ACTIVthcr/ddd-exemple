@@ -29,7 +29,7 @@ public class Article {
 	}
 
 	public static Article hydrate(long id, String nom, BigDecimal prix, long nbRestant, boolean isAuCatalogue) {
-		return new Article(ArticleId.hydrate(id), nom, prix, Stock.hydrate(nbRestant), isAuCatalogue);
+		return new Article(new ArticleId(id), nom, prix, Stock.hydrate(nbRestant), isAuCatalogue);
 	}
 
 	public Article ajouterAuCatalogue() {

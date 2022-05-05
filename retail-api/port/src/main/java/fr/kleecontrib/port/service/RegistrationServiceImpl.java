@@ -3,7 +3,7 @@ package fr.kleecontrib.port.service;
 import java.util.Optional;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import fr.kleecontrib.domain.client.error.IncorrectPasswordError;
 import fr.kleecontrib.domain.id.RegistrationId;
@@ -14,8 +14,8 @@ import fr.kleecontrib.port.jpa.repository.RegistrationEntityRepository;
 import fr.kleecontrib.port.service.mapper.RegistrationEntityMapper;
 import lombok.RequiredArgsConstructor;
 
-@Component
 @RequiredArgsConstructor
+@Service
 public class RegistrationServiceImpl implements RegistrationService {
 
 	private final RegistrationEntityRepository registrationEntityRepository;

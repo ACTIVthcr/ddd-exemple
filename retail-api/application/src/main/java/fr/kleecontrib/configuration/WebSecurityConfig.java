@@ -1,4 +1,4 @@
-package fr.kleecontrib.application.configuration;
+package fr.kleecontrib.configuration;
 
 import java.util.Collections;
 
