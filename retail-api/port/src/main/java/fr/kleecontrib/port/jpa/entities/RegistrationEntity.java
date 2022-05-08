@@ -1,12 +1,16 @@
 package fr.kleecontrib.port.jpa.entities;
 
+import java.util.Objects;
+
 import javax.persistence.*;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Table(name = "REGISTRATION")
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
 public class RegistrationEntity {
 
@@ -38,5 +42,20 @@ public class RegistrationEntity {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.password = password;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(email, firstName, name);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		RegistrationEntity that = (RegistrationEntity) o;
+		return email.equals(that.email) && firstName.equals(that.firstName) && name.equals(that.name);
 	}
 }

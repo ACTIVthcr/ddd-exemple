@@ -9,6 +9,9 @@ public class AddressModelMapper {
 	}
 
 	public static Address modelToDomain(AddressModel model) {
+		if (model == null) {
+			return null;
+		}
 		return Address.hydrate(model.getNumber(), model.getRoad(), model.getCity(), model.getZipCode(),
 				model.getCountry(), model.isCurrent());
 	}

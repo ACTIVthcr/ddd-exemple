@@ -11,26 +11,32 @@
 		</parent>
 
 		<artifactId>application</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>${parent.version}</version>
 		<packaging>war</packaging>
-		<name>demo-ddd</name>
+		<name>application</name>
 		<description>demo ddd pour klee contrib</description>
 		<dependencies>
 				<dependency>
 						<groupId>fr.kleecontrib</groupId>
 						<artifactId>port</artifactId>
-						<version>0.0.1-SNAPSHOT</version>
+						<version>${parent.version}</version>
 				</dependency>
 				<dependency>
 						<groupId>fr.kleecontrib</groupId>
 						<artifactId>domain</artifactId>
-						<version>0.0.1-SNAPSHOT</version>
+						<version>${parent.version}</version>
 				</dependency>
 				<dependency>
 						<groupId>fr.kleecontrib</groupId>
 						<artifactId>usecase</artifactId>
-						<version>0.0.1-SNAPSHOT</version>
+						<version>${parent.version}</version>
 				</dependency>
+				<!-- SRPING FRAMEWORK-->
+				<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-core</artifactId>
+				</dependency>
+				<!-- SRPINGBOOT FRAMEWORK-->
 				<dependency>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -59,19 +65,16 @@
 						<artifactId>postgresql</artifactId>
 						<scope>runtime</scope>
 				</dependency>
-				<!-- HIBERNATE -->
-				<dependency>
-						<groupId>org.hibernate</groupId>
-						<artifactId>hibernate-core</artifactId>
-				</dependency>
-				<dependency>
-						<groupId>org.hibernate</groupId>
-						<artifactId>hibernate-entitymanager</artifactId>
-				</dependency>
 				<!-- SECURITY -->
 				<dependency>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-starter-security</artifactId>
+				</dependency>
+				<!-- TEST -->
+				<dependency>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-test</artifactId>
+						<scope>test</scope>
 				</dependency>
 				<!-- junit for intelliJ -->
 				<dependency>

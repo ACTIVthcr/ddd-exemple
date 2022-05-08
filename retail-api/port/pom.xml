@@ -11,18 +11,18 @@
 		</parent>
 
 		<artifactId>port</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>${parent.version}</version>
 
 		<dependencies>
 				<dependency>
 						<groupId>fr.kleecontrib</groupId>
 						<artifactId>usecase</artifactId>
-						<version>0.0.1-SNAPSHOT</version>
+						<version>${parent.version}</version>
 				</dependency>
 				<dependency>
 						<groupId>fr.kleecontrib</groupId>
 						<artifactId>domain</artifactId>
-						<version>0.0.1-SNAPSHOT</version>
+						<version>${parent.version}</version>
 				</dependency>
 				<dependency>
 						<groupId>org.springframework.boot</groupId>
@@ -40,15 +40,6 @@
 				<dependency>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-starter-data-jpa</artifactId>
-				</dependency>
-				<!-- HIBERNATE -->
-				<dependency>
-						<groupId>org.hibernate</groupId>
-						<artifactId>hibernate-core</artifactId>
-				</dependency>
-				<dependency>
-						<groupId>org.hibernate</groupId>
-						<artifactId>hibernate-entitymanager</artifactId>
 				</dependency>
 				<!-- LIQUIBASE -->
 				<dependency>

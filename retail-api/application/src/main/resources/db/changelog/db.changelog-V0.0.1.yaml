@@ -9,10 +9,11 @@ databaseChangeLog:
             columns:
               - column:
                   name: REG_ID
-                  type: BIGINT
+                  type: SERIAL
                   constraints:
                     primary: true
                     nullable: false
+                    autoIncrement: true
               - column:
                   name: EMAIL
                   type: VARCHAR(100)
@@ -36,9 +37,3 @@ databaseChangeLog:
               - column:
                   name: PHONE_NUMBER
                   type: VARCHAR(20)
-        - addAutoIncrement:
-            tableName: REGISTRATION
-            columnDataType: BIGINT
-            columnName: REG_ID
-            defaultOnNull: false
-            generationType: ALWAYS

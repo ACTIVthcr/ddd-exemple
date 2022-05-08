@@ -1,7 +1,6 @@
 package fr.kleecontrib.port.api;
 
 import java.util.Collections;
-import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -35,8 +34,8 @@ public class RegistrationController {
 				AddressModelMapper.modelToDomain(registerForm.getBillAddress()),
 				registerForm.getDeliveryAddress() == null ?
 				Collections.emptyList() :
-				registerForm.getDeliveryAddress().stream().map(AddressModelMapper::modelToDomain)
-						.collect(Collectors.toList()), registerForm.getPhoneNumber(), registerForm.getPassword()).id();
+				registerForm.getDeliveryAddress().stream().map(AddressModelMapper::modelToDomain).toList(),
+				registerForm.getPhoneNumber(), registerForm.getPassword()).id();
 	}
 
 	@GetMapping("/{id}")
